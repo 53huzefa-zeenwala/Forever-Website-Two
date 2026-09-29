@@ -22,39 +22,78 @@ function FrozenRouter(props: { children: React.ReactNode }) {
 
 export const ROUTES = ["/", "/products", "/about", "/contact"];
 
+const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
+const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
+
 const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
   const key = usePathname(); // Get the current route
-  const [prevRoute, setPrevRoute] = useState<string>("/");
-  const [direction, setDirection] = useState<"left" | "right">("right");
+  // const [prevRoute, setPrevRoute] = useState<string>("/");
+  // const [direction, setDirection] = useState<"left" | "right">("right");
 
-  // Update the previous route and determine transition direction
-  useEffect(() => {
-    const currentIndex = ROUTES.indexOf(key);
-    const prevIndex = ROUTES.indexOf(prevRoute);
+  // // Update the previous route and determine transition direction
+  // useEffect(() => {
+  //   const currentIndex = ROUTES.indexOf(key);
+  //   const prevIndex = ROUTES.indexOf(prevRoute);
 
-    if (currentIndex > prevIndex) {
-      setDirection("left"); // Moving backward in the ROUTES array
-    } else if (currentIndex < prevIndex) {
-      setDirection("right"); // Moving forward in the ROUTES array
-    }
+  //   if (currentIndex > prevIndex) {
+  //     setDirection("left"); // Moving backward in the ROUTES array
+  //   } else if (currentIndex < prevIndex) {
+  //     setDirection("right"); // Moving forward in the ROUTES array
+  //   }
 
-    // Update the previous route to the current one
-    setPrevRoute(key);
-  }, [key, prevRoute]);
+  //   // Update the previous route to the current one
+  //   setPrevRoute(key);
+  // }, [key, prevRoute]);
 
   // Animation variants for left and right transitions
-  const variants = {
-    left: {
-      hidden: { opacity: 0, x: -1000, filter: "blur(10px)" },
-      enter: { opacity: 1, x: 0, filter: "blur(0px)" },
-      exit: { opacity: 0, x: 1000, filter: "blur(10px)" },
-    },
-    right: {
-      hidden: { opacity: 0, x: 1000, filter: "blur(10px)" },
-      enter: { opacity: 1, x: 0, filter: "blur(0px)" },
-      exit: { opacity: 0, x: -1000, filter: "blur(10px)" },
-    },
-  };
+  // const variants = {
+  //   left: {
+  //     hidden: {
+  //       WebkitMaskImage: hiddenMask,
+  //       maskImage: hiddenMask,
+  //       opacity: 0,
+  //       //x: -1000,
+  //       filter: "blur(10px)",
+  //     },
+  //     enter: {
+  //       WebkitMaskImage: visibleMask,
+  //       maskImage: visibleMask,
+  //       opacity: 1,
+  //       //x: 0,
+  //       filter: "blur(0px)",
+  //     },
+  //     exit: {
+  //       WebkitMaskImage: hiddenMask,
+  //       maskImage: hiddenMask,
+  //       opacity: 0,
+  //       //x: 1000,
+  //       filter: "blur(10px)",
+  //     },
+  //   },
+  //   right: {
+  //     hidden: {
+  //       WebkitMaskImage: hiddenMask,
+  //       maskImage: hiddenMask,
+  //       opacity: 0,
+  //       //x: 1000,
+  //       filter: "blur(10px)",
+  //     },
+  //     enter: {
+  //       WebkitMaskImage: visibleMask,
+  //       maskImage: visibleMask,
+  //       opacity: 1,
+  //       //x: 0,
+  //       filter: "blur(0px)",
+  //     },
+  //     exit: {
+  //       WebkitMaskImage: hiddenMask,
+  //       maskImage: hiddenMask,
+  //       opacity: 0,
+  //       //x: -1000,
+  //       filter: "blur(10px)",
+  //     },
+  //   },
+  // };
 
   return (
     <AnimatePresence mode="popLayout">
@@ -63,7 +102,29 @@ const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
         initial="hidden"
         animate="enter"
         exit="exit"
-        variants={variants[direction]}
+        variants={{
+          hidden: {
+            WebkitMaskImage: hiddenMask,
+            maskImage: hiddenMask,
+            opacity: 0,
+            //x: 1000,
+            filter: "blur(10px)",
+          },
+          enter: {
+            WebkitMaskImage: visibleMask,
+            maskImage: visibleMask,
+            opacity: 1,
+            //x: 0,
+            filter: "blur(0px)",
+          },
+          exit: {
+            WebkitMaskImage: hiddenMask,
+            maskImage: hiddenMask,
+            opacity: 0,
+            //x: -1000,
+            filter: "blur(10px)",
+          },
+        }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
       >
         <FrozenRouter>{children}</FrozenRouter>

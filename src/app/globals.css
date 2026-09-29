@@ -13,9 +13,25 @@
     @apply bg-white;
   }
   .nav-link {
-    @apply hover:text-nav-light-300 text-nav-light-500 transition-[color] hover:underline;
+    @apply hover:text-nav-light-400 text-nav-light-500 transition-[color] hover:underline;
   }
   .selected-nav-link {
-    @apply text-nav-light-300;
+    @apply text-nav-light-400;
   }
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* .header-background {
+  background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #fff 1px);
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+} */

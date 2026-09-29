@@ -34,9 +34,7 @@ export const Header = () => {
     <div>
       <nav
         className={`p-4  fixed w-full transition-all z-30 ${
-          navBackground
-            ? "bg-nav-light-200/20 shadow-md backdrop-blur-[6px]"
-            : ""
+          navBackground ? "bg-white/20 shadow-md backdrop-blur-[6px] " : ""
         }`}
       >
         <div className="flex justify-between items-center font-semibold text-lg">
@@ -121,30 +119,30 @@ export const Header = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   <path
                     d="M6 12H18"
                     stroke="#000000"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                   <path
                     d="M6 15.5H18"
                     stroke="#000000"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                   <path
                     d="M6 8.5H18"
                     stroke="#000000"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </g>
               </svg>
@@ -178,11 +176,11 @@ export const Header = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></g>
                     <g id="SVGRepo_iconCarrier">
                       <g id="Menu / Close_MD">
@@ -190,9 +188,9 @@ export const Header = () => {
                           id="Vector"
                           d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18"
                           stroke="#000000"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                       </g>
                     </g>
@@ -219,11 +217,11 @@ export const Header = () => {
                       height="24px"
                       width="24px"
                     >
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                       <g
                         id="SVGRepo_tracerCarrier"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       ></g>
                       <g id="SVGRepo_iconCarrier">
                         <g id="style=fill" clip-path="url(#clip0_1_188)">
@@ -272,11 +270,11 @@ export const Header = () => {
                       viewBox="0 0 248.272 248.272"
                       fill="#000000"
                     >
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                       <g
                         id="SVGRepo_tracerCarrier"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       ></g>
                       <g id="SVGRepo_iconCarrier">
                         <g>
